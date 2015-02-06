@@ -3,10 +3,11 @@
 // Generated on 2015-02-06 using
 // generator-karma 0.8.3
 
-module.exports = function(config) {
+module.exports = function(config){
   'use strict';
 
   config.set({
+
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
@@ -18,20 +19,23 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-aria/angular-aria.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-messages/angular-messages.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/angular-aria/angular-aria.js',
+      'app/bower_components/angular-cookies/angular-cookies.js',
+      'app/bower_components/angular-messages/angular-messages.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-sanitize/angular-sanitize.js',
+      'app/bower_components/angular-touch/angular-touch.js',
       'app/scripts/**/*.js',
+      'app/components/**/*.js',
+      'app/view*/**/*.js'
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
+
 
     // list of files / patterns to exclude
     exclude: [],
@@ -48,13 +52,17 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'PhantomJS'
+      'PhantomJS',
+      'Chrome'
     ],
 
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine'
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-junit-reporter'
     ],
 
     // Continuous Integration mode
@@ -73,5 +81,11 @@ module.exports = function(config) {
     // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
+
+    junitReporter : {
+      outputFile: 'test_out/unit.xml',
+      suite: 'unit'
+    }
+
   });
 };
