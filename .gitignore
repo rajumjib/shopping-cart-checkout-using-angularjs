@@ -3,7 +3,7 @@ dist
 .tmp
 .sass-cache
 bower_components/
-.log
+*.log
 logs/*
 !.gitkeep
 tmp

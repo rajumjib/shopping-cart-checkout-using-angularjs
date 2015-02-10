@@ -29,10 +29,15 @@ module.exports = function(config){
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-touch/angular-touch.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/scripts/**/*.js',
       'app/components/**/*.js',
-      'app/view*/**/*.js'
+      'app/view*/**/*.js',
+      'app/scripts/*.js',
+
+      'test/mock/**/**/*.js',
       'test/mock/**/*.js',
+      'test/spec/**/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -59,7 +64,7 @@ module.exports = function(config){
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-junit-reporter'
