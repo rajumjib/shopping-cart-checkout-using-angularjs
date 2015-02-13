@@ -16,7 +16,48 @@ describe('Controller: AboutCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  var eventFake, spanFake;
+
+  beforeEach(function() {
+
+    spanFake = document.createElement('SPAN');
+    eventFake = {
+      target: function() {
+        retun;
+      }
+
+    };
+   
+    spyOn(eventFake, "target").and.callFake(function() {
+      return spanFake;
+    });
+
   });
+
+  it('should get empty email', function () {
+    expect(scope.emailAddress).toBe('');
+  });
+
+  it('should get the email address', function () {
+
+    scope.showEmail();
+    expect(scope.emailAddress).toBe('0nline4help@gmail.com');
+  });
+
+  xit('should hide the eye element', function () {
+
+    /*
+    expect(element('.value-entry input').css('display')).toBe('inline');
+    expect(element('.value-entry select').css('display')).toBe('inline-block');
+    expect(element('.value-entry input').css('display')).toBe('none');
+    expect(element('.value-entry select').css('display')).toBe('none');
+    expect(element('#some-id:visible').count()).toBe(1);
+    expect(element('.value-entry input').hasClass('ng-hide')).toBe(true);
+    */
+    //expect(spanFake.style.display).toBeUndefined();
+    scope.showEmail(eventFake);
+    //expect(spanFake.style.display).toBe('');
+    expect($(spanFake).css('display')).toBe('none');
+  });
+
 });

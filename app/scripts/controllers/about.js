@@ -10,4 +10,12 @@
 angular.module('shoppingCartApp')
   .controller('AboutCtrl', function ($scope) {
     
+    $scope.emailAddress='';
+
+    $scope.showEmail = function(clickEvent) {
+        $scope.emailAddress='0nline4help@gmail.com';
+        if(clickEvent)
+        	$(clickEvent.target).hide();
+    };
+
   });
