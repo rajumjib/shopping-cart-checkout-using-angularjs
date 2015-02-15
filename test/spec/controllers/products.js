@@ -1,32 +1,31 @@
 'use strict';
 
-describe('Controller: ProductsCtrl', function () {
+describe('Controller: ProductController', function () {
 
   // load the controller's module
   beforeEach(module('shoppingCartApp'));
 
-  var ProductsCtrl,
+  var productController,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
+
     scope = $rootScope.$new();
-    ProductsCtrl = $controller('ProductsCtrl', {
-      $scope: scope
-    });
+    productController = $controller('ProductController', {$scope: scope});
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it("Should say hello", function() {
+        expect(productController.message).toBe("Hello");
   });
 });
 
 
-describe("Controller: ProductsCtrl", function() {
+describe("Controller: ProductController", function() {
     
     var $rootScope, $scope;
     var $controller;
-    var productsCtrl;
+    var productController;
 
     beforeEach(module("shoppingCartApp"));
 
@@ -35,21 +34,19 @@ describe("Controller: ProductsCtrl", function() {
         $rootScope = $injector.get('$rootScope');
         $controller = $injector.get('$controller');
         $scope = $rootScope.$new();
-
     }));
 
     beforeEach(inject(function($controller) {
-        productsCtrl = $controller("ProductsCtrl", {$scope: $scope});
-
+        productController = $controller("ProductController", {$scope: $scope});
     }));
 
     it("Should say hello", function() {
-        expect(productsCtrl.message).toBe("Hello");
+        expect(productController.message).toBe("Hello");
     });
 
 });
 
-describe("Controller: ProductsCtrl", function() {
+describe("Controller: ProductController", function() {
   
     var $scope;
     var controller;
@@ -61,8 +58,7 @@ describe("Controller: ProductsCtrl", function() {
         inject(function(_$rootScope_, $controller) {
 
             $scope = _$rootScope_.$new();
-            controller = $controller("ProductsCtrl", {$scope: $scope});
-
+            controller = $controller("ProductController", {$scope: $scope});
         });
 
     });

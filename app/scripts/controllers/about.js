@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name shoppingCartApp.controller:AboutCtrl
+ * @name shoppingCartApp.controller:AboutController
  * @description
- * # AboutCtrl
+ * # AboutController
  * Controller of the shoppingCartApp
  */
 angular.module('shoppingCartApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutController', function ($scope) {
     
     $scope.emailAddress='';
 

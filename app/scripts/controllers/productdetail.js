@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name shoppingCartApp.controller:ProductdetailCtrl
+ * @name shoppingCartApp.controller:ProductdetailController
  * @description
- * # ProductdetailCtrl
+ * # ProductdetailController
  * Controller of the shoppingCartApp
  */
 angular.module('shoppingCartApp')
-  .controller('ProductdetailCtrl', function ($scope) {
+  .controller('ProductdetailController', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

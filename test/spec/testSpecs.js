@@ -1,7 +1,7 @@
 ﻿
 describe("=======================================================================================",
   function() {
-    it("Starting default jasmine testing by checking -> Should be true", function() {
+    xit("Starting default jasmine testing by checking -> Should be true", function() {
         expect(true).toBeTruthy();
     });
 });

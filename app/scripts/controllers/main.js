@@ -2,14 +2,15 @@
 
 /**
  * @ngdoc function
- * @name shoppingCartApp.controller:MainCtrl
+ * @name shoppingCartApp.controller:MainController
  * @description
- * # MainCtrl
+ * # MainController
  * Controller of the shoppingCartApp
  */
 angular.module('shoppingCartApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+  .controller('MainController', function ($scope) {
+  	
+    $scope.features = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'

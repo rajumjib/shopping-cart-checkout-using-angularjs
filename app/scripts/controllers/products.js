@@ -2,20 +2,15 @@
 
 /**
  * @ngdoc function
- * @name shoppingCartApp.controller:ProductsCtrl
+ * @name shoppingCartApp.controller:ProductsController
  * @description
- * # ProductsCtrl
+ * # ProductsController
  * Controller of the shoppingCartApp
  */
 angular.module('shoppingCartApp')
-  .controller('ProductsCtrl', function ($scope) {
+  .controller('ProductController', ['$scope', 'ProductService', function ($scope, productService) {
 
   	this.message = "Hello";
   	
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
-  });
+  }]);

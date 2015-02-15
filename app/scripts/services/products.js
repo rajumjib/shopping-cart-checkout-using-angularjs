@@ -8,7 +8,7 @@
  * Service in the shoppingCartApp.
  */
 angular.module('shoppingCartApp')
-  .service('productService', function () {
+  .service('ProductService', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
   });
