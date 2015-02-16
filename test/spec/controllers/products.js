@@ -7,17 +7,31 @@ describe('Controller: ProductController', function () {
 
   var productController,
     scope;
+  var dataFake=[{name: 'Nexus S'}, {name: 'Motorola DROID'}];
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _$httpBackend_) {
+
+    $httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('../data/product/products.json')
+      .respond(dataFake);
 
     scope = $rootScope.$new();
     productController = $controller('ProductController', {$scope: scope});
   }));
 
-  it("Should say hello", function() {
-        expect(productController.message).toBe("Hello");
+  it("Should contain list of products", function() {
+    $httpBackend.flush();
+    expect(scope.products.length).toBeGreaterThan(0);
   });
+
+  it('should have products (2 products) fetched from xhr', function() {
+    expect(scope.products).toEqual([]);
+    $httpBackend.flush();
+
+    expect(scope.products).toEqual(dataFake);
+  });
+
 });
 
 
@@ -40,9 +54,9 @@ describe("Controller: ProductController", function() {
         productController = $controller("ProductController", {$scope: $scope});
     }));
 
-    it("Should say hello", function() {
-        expect(productController.message).toBe("Hello");
-    });
+    it("Should contain list of products", function() {
+        expect($scope.products.length).toBeGreaterThan(0);
+  });
 
 });
 
@@ -63,8 +77,8 @@ describe("Controller: ProductController", function() {
 
     });
 
-    it("Should say hello", function() {
-        expect(controller.message).toBe("Hello");
-    });
+    it("Should contain list of products", function() {
+        expect($scope.products.length).toBeGreaterThan(0);
+  });
 
 });

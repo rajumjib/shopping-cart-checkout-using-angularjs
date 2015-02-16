@@ -11,8 +11,9 @@ describe('Service: ProductService', function () {
     productService = _ProductService_;
   }));
 
-  it('should do something', function () {
-    expect(!!productService).toBe(true);
-  });
+  // Test service availability
+  it('should have existence of Phone Service factory', inject(function(Phone) {
+      expect(productService).toBeDefined();
+  }));
 
 });

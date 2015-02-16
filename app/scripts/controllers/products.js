@@ -10,7 +10,7 @@
 angular.module('shoppingCartApp')
   .controller('ProductController', ['$scope', 'ProductService', function ($scope, productService) {
 
-  	this.message = "Hello";
+  	 $scope.products = productService.query();
   	
 
   }]);
